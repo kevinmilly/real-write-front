@@ -5,7 +5,16 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
-  }
+  },
+  {
+    path: 'related',
+    loadChildren: () => import('./pages/related/related.module').then( m => m.RelatedPageModule)
+  },
+  {
+    path: 'brainstorm',
+    loadChildren: () => import('./pages/brainstorm/brainstorm.module').then( m => m.BrainstormPageModule)
+  },
+
 ];
 @NgModule({
   imports: [

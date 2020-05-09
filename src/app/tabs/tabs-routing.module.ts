@@ -8,27 +8,31 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: 'tab1',
-        loadChildren: () => import('../tab1/tab1.module').then(m => m.Tab1PageModule)
+        path: 'sound',
+        loadChildren: () => import('../pages/sound/sound.module').then(m => m.SoundPageModule)
       },
       {
-        path: 'tab2',
-        loadChildren: () => import('../tab2/tab2.module').then(m => m.Tab2PageModule)
+        path: 'related',
+        loadChildren: () => import('../pages/related/related.module').then(m => m.RelatedPageModule)
       },
       {
-        path: 'tab3',
-        loadChildren: () => import('../tab3/tab3.module').then(m => m.Tab3PageModule)
+        path: 'rhymebook',
+        loadChildren: () => import('../pages/rhymebook/rhymebook.module').then(m => m.RhymeBookPageModule)
+      },
+      {
+        path: 'brainstorm',
+        loadChildren: () => import('../pages/brainstorm/brainstorm.module').then(m => m.BrainstormPageModule)
       },
       {
         path: '',
-        redirectTo: '/tabs/tab1',
+        redirectTo: '/tabs/rhymebook',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/tab1',
+    redirectTo: '/tabs/rhymebook',
     pathMatch: 'full'
   }
 ];
