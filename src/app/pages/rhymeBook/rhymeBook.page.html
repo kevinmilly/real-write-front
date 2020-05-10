@@ -1,5 +1,5 @@
 
-<ion-content [fullscreen]="true">
+<ion-content>
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">Rhyme Book</ion-title>
@@ -11,10 +11,10 @@
         <ion-card-title class="notepad-title">Start ideating!</ion-card-title>
       </ion-card-header>
     
-      <ion-card-content >
-        <ion-item>
-          <ion-textarea class="notepad"></ion-textarea>
-        </ion-item>
+      <ion-card-content [style.background-color]="'#ead2ac'">
+        <div class="textarea-wrapper">
+          <ion-textarea class="notepad"  cols="30" rows="55"></ion-textarea>
+        </div>
       </ion-card-content>
     </ion-card>
 

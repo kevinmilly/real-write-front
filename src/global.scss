@@ -27,30 +27,72 @@
 
 
 ion-content {
-    height: 30em;
+    height: 40em;
     overflow: auto;
     margin-right: 5em;
+    width: 24em;
+   
+  
 }
-ion-card-content {
-    width: 30em;
-    height: 38em;
-    overflow: auto;
-    margin-right: 5em;
+ion-card {
+    padding-right: 10em;
+    padding-left: -5em;
+    width: 24em;
+    height: 40em;
+    margin-top: .5em;
+    margin-right: 7em;
+    background-color: #ead2ac;
 }
 
-.notepad {
- background: url(http://i.stack.imgur.com/ynxjD.png) repeat-y;
- width: 30em;
- height: 35em;
- overflow: auto;
- font: normal 14px verdana;
- line-height: 25px;
- padding: 2px 5px;
- border: solid 1px #ddd;
- margin-right: 5em;
+ion-card-content {
+    width: 23em;
+    height: 40em;
+    overflow: auto;
+    // margin-right: 5em;
+    background-color: #ead2ac;
+
+   
 }
+
 
 .notepad-title {
     font-family: 'Covered By Your Grace', cursive;
 }
 
+ion-textarea {
+    height: 70em;
+    background-color: #ead2ac;
+}
+.notepad {
+    background: url(http://i.imgur.com/2cOaJ.png);
+    background-attachment: local;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+    padding-top: .1em;
+    border-color: #ccc;
+
+  
+    font-size: 13px;
+    line-height: 20px;
+     width: 24em;
+     height: auto;
+     overflow: auto;
+   
+  }
+  
+  .textarea-wrapper {
+    display: inline-block;
+    background-image: linear-gradient(#F1F1F1 50%, #f1eec1 50%);
+    background-size: 100% 40px;
+    background-position: left 10px;
+    background-color: #ead2ac;
+    height: auto;
+    width: 23em;
+    // height: 25em;
+  }
+
+  ion-item {
+      height: 40em;
+      background-color: #ead2ac;
+      width: auto;
+  }

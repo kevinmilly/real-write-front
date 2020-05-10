@@ -23,8 +23,8 @@ export class BackendService {
 
 
   
-  // private baseURL = "http://localhost:3000/api/";
-  private baseURL = "https://real-write-rap.ue.r.appspot.com/api/";
+  private baseURL = "http://localhost:3000/api/";
+  // private baseURL = "https://real-write-rap.ue.r.appspot.com/api/";
 
 
   rhymeResult = null;
