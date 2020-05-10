@@ -1,24 +1,21 @@
 import { IonicModule } from '@ionic/angular';
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+
 import { SoundPage } from './sound.page';
 
 
 import { SoundPageRoutingModule } from './sound-routing.module';
-import { SearchAssistComponent } from 'src/app/components/search-assist/search-assist.component';
 import { SearchOptionsPage } from '../modals/search-options.page';
+import { FeaturesModule } from 'src/app/shared/modules/features/features.module';
 
 
 @NgModule({
   imports: [
     IonicModule,
-    CommonModule,
-    FormsModule,
     SoundPageRoutingModule,
-
+    FeaturesModule
   ],
-  declarations: [SoundPage, SearchOptionsPage, SearchAssistComponent],
+  declarations: [SoundPage, SearchOptionsPage],
   entryComponents:[SearchOptionsPage]
 })
 export class SoundPageModule {}
