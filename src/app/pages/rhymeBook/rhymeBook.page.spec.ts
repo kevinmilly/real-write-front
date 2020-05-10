@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 import { ExploreContainerComponentModule } from '../../explore-container/explore-container.module';
 
-import { RhymeBookPage } from './rhymebook.page';
+import { RhymeBookPage } from './rhymeBook.page';
 
 describe('RhymeBookPage', () => {
   let component: RhymeBookPage;

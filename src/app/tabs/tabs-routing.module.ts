@@ -16,8 +16,8 @@ const routes: Routes = [
         loadChildren: () => import('../pages/related/related.module').then(m => m.RelatedPageModule)
       },
       {
-        path: 'rhymebook',
-        loadChildren: () => import('../pages/rhymebook/rhymebook.module').then(m => m.RhymeBookPageModule)
+        path: 'rhymeBook',
+        loadChildren: () => import('../pages/rhymeBook/rhymeBook.module').then(m => m.RhymeBookPageModule)
       },
       {
         path: 'brainstorm',
@@ -25,14 +25,14 @@ const routes: Routes = [
       },
       {
         path: '',
-        redirectTo: '/tabs/rhymebook',
+        redirectTo: '/tabs/rhymeBook',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/rhymebook',
+    redirectTo: '/tabs/rhymeBook',
     pathMatch: 'full'
   }
 ];

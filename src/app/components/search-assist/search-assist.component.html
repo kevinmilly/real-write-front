@@ -1,9 +1,54 @@
 <ion-header >
   <ion-toolbar>
-    <ion-title size="large">
-      <ng-content></ng-content>
-    </ion-title>
+    <!-- <ion-list>
+      <ion-radio-group [(ngModel)]="rhymeStyle">
+        <ion-list-header>
+          <ion-label>
+            Filters
+          </ion-label>
+        </ion-list-header>
+        <ion-row>
+          <ion-col size="6" *ngIf="rhymeStyle === 'perfectRhymes'">
+            <ion-item>
+              <ion-label>Include Slight Rhymes</ion-label>
+              <ion-radio value="slightRhymes"></ion-radio>
+            </ion-item>
+          </ion-col>
+          <ion-col  size="6">
+            <ion-item>
+              <ion-label>Only Perfect Rhymes</ion-label>
+              <ion-radio value="perfectRhymes" selected></ion-radio>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-radio-group>
+    </ion-list> -->
   </ion-toolbar>
+  <ion-row>
+    <ion-col size="5">
+      <ion-item>
+        <ion-label>Word to Rhyme</ion-label>
+        <ion-input [(ngModel)]="rhyme"></ion-input>  
+      </ion-item>
+    </ion-col>
+    <!-- <ion-col  size="5">
+      <ion-item>
+        <ion-input [(ngModel)]="sl"></ion-input>
+      </ion-item>
+    </ion-col> -->
+    <ion-col  size="5">
+      <ion-item>
+        <ion-label>Topic Criteria</ion-label>
+        <ion-input [(ngModel)]="topics"></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col size="2">
+        <ion-button (click)="getResults()">
+          <ion-icon slot="icon-only" name="search"></ion-icon>
+        </ion-button>
+    </ion-col>
+  </ion-row>
+
 </ion-header>
 <ion-content [fullscreen]="true" >
 <ion-list *ngIf="results$ | async as results">
@@ -14,9 +59,9 @@
   </ion-item>
 </ion-list>
 </ion-content>
-
+<!-- 
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button color="secondary" (click)="presentModal()">
       <ion-icon name="settings"></ion-icon>
       </ion-fab-button>
-  </ion-fab>
+  </ion-fab> -->

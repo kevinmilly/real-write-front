@@ -29,4 +29,28 @@
 ion-content {
     height: 30em;
     overflow: auto;
+    margin-right: 5em;
 }
+ion-card-content {
+    width: 30em;
+    height: 38em;
+    overflow: auto;
+    margin-right: 5em;
+}
+
+.notepad {
+ background: url(http://i.stack.imgur.com/ynxjD.png) repeat-y;
+ width: 30em;
+ height: 35em;
+ overflow: auto;
+ font: normal 14px verdana;
+ line-height: 25px;
+ padding: 2px 5px;
+ border: solid 1px #ddd;
+ margin-right: 5em;
+}
+
+.notepad-title {
+    font-family: 'Covered By Your Grace', cursive;
+}
+

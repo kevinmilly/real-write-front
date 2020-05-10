@@ -23,8 +23,8 @@ export class BackendService {
 
 
   
-  private baseURL = "http://localhost:3000/api/";
-  // private baseURL = "https://real-write.appspot.com/api/";
+  // private baseURL = "http://localhost:3000/api/";
+  private baseURL = "https://real-write-rap.ue.r.appspot.com/api/";
 
 
   rhymeResult = null;
@@ -43,20 +43,20 @@ export class BackendService {
   }
 
   
-  initializeResults(relate,rhyme,sl,topics) { 
+  initializeResults(rhyme,sl,topics) { 
 
-    this.rhymeResult = this.http.get<any[]>(`${this.baseURL}wordSearch/${relate}/${rhyme}/${sl}/${topics}`);
+    this.rhymeResult = this.http.get<any[]>(`${this.baseURL}wordSearch/${rhyme}/${topics}`);
     // this.currentEnc = new BehaviorSubject<any>(this.encResults);
          
   }
 
   ///////////////////////////Retainer /////////////////////////////////
-  wordSearch(relate,rhyme,sl,topics) {
-    this.rhymeResult = this.http.get<any[]>(`${this.baseURL}wordSearch/${relate}/${rhyme}/${sl}/${topics}`);
+  wordSearch(rhyme,sl,topics) {
+    this.rhymeResult = this.http.get<any[]>(`${this.baseURL}wordSearch/${rhyme}/${topics}`);
 
   }
 
-  // initializeResults(relate,rhyme,sl,topics) { 
+  // initializeResults(rhyme,sl,topics) { 
   //   let url = `${this.baseURL}wordSearch`;
   //   if(relate) {
   //     url += `/${relate}`;
@@ -75,7 +75,7 @@ export class BackendService {
 
 
   
-  // wordSearch(relate,rhyme,sl,topics) {
+  // wordSearch(rhyme,sl,topics) {
   //   let url = `${this.baseURL}wordSearch`;
   //   if(relate) {
   //     url += `/${relate}`;

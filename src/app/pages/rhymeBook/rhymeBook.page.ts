@@ -2,13 +2,14 @@ import { Component } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 
 @Component({
-  selector: 'app-rhymebook',
-  templateUrl: 'rhymebook.page.html',
-  styleUrls: ['rhymebook.page.scss']
+  selector: 'app-rhymeBook',
+  templateUrl: 'rhymeBook.page.html',
+  styleUrls: ['rhymeBook.page.scss']
 })
 export class RhymeBookPage {
 
   item;
+  content;
 
   constructor(private fb: FormBuilder) {
     this.item = this.fb.control('');
