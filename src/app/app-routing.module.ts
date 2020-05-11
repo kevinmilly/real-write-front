@@ -15,6 +15,16 @@ const routes: Routes = [
     loadChildren: () => import('./pages/brainstorm/brainstorm.module').then( m => m.BrainstormPageModule)
   },
 
+  {
+    path: 'rhymeBook',
+    loadChildren: () => import('./pages/rhymeBook/rhymeBook.module').then( m => m.RhymeBookPageModule)
+  },
+  {
+    path: 'tabs',
+    loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
+  },
+
+
 ];
 @NgModule({
   imports: [

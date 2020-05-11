@@ -21,7 +21,9 @@ const httpOptions = {
 })
 export class BackendService {
 
+  private _rhymeBookContent: BehaviorSubject<string> = new BehaviorSubject("");
 
+  public readonly rhymeBookContent: Observable<string> = this._rhymeBookContent.asObservable();
   
   private baseURL = "http://localhost:3000/api/";
   // private baseURL = "https://real-write-rap.ue.r.appspot.com/api/";
@@ -42,7 +44,24 @@ export class BackendService {
       please let Kevin know about this and where it happened.`)
   }
 
+
+  ///////////////////////////Store Services /////////////////////////////////
   
+  saveRhymeBookContent(content: string) {
+    console.log("Saving Content");
+    return this._rhymeBookContent.next(content);
+  }
+
+
+
+
+
+  ///////////////////////////Rhyme Services /////////////////////////////////
+  wordSearch(rhyme,sl,topics) {
+    this.rhymeResult = this.http.get<any[]>(`${this.baseURL}wordSearch/${rhyme}/${topics}`);
+
+  }
+
   initializeResults(rhyme,sl,topics) { 
 
     this.rhymeResult = this.http.get<any[]>(`${this.baseURL}wordSearch/${rhyme}/${topics}`);
@@ -50,47 +69,7 @@ export class BackendService {
          
   }
 
-  ///////////////////////////Retainer /////////////////////////////////
-  wordSearch(rhyme,sl,topics) {
-    this.rhymeResult = this.http.get<any[]>(`${this.baseURL}wordSearch/${rhyme}/${topics}`);
-
-  }
-
-  // initializeResults(rhyme,sl,topics) { 
-  //   let url = `${this.baseURL}wordSearch`;
-  //   if(relate) {
-  //     url += `/${relate}`;
-  //   } else if(rhyme) {
-  //     url += `/${rhyme}`;
-  //   } else if(sl) {
-  //     url += `/${sl}`;
-  //   } else if(topics) {
-  //     url += `/${topics}`;
-  //   }
   
-  //   this.rhymeResult = this.http.get<any[]>(url);
-
-         
-  // }
-
-
-  
-  // wordSearch(rhyme,sl,topics) {
-  //   let url = `${this.baseURL}wordSearch`;
-  //   if(relate) {
-  //     url += `/${relate}`;
-  //   } else if(rhyme) {
-  //     url += `/${rhyme}`;
-  //   } else if(sl) {
-  //     url += `/${sl}`;
-  //   } else if(topics) {
-  //     url += `/${topics}`;
-  //   }
-  
-  //   this.rhymeResult = this.http.get<any[]>(url);
-
-  // }
-
 
 
   }

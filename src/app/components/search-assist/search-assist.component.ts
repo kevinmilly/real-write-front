@@ -1,8 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { ModalController, NavController } from '@ionic/angular';
 import { BackendService } from 'src/app/services/backend.service';
 import { SearchOptionsPage } from 'src/app/pages/modals/search-options.page';
 import { Observable } from 'rxjs';
+import { NavigationExtras, Router } from '@angular/router';
 
 @Component({
   selector: 'app-search-assist',
@@ -28,7 +29,7 @@ export class SearchAssistComponent implements OnInit {
   
   @Input() syn;
 
-constructor(public modalController: ModalController, private backend: BackendService) {}
+constructor(public modalController: ModalController, private backend: BackendService, public navCtrl: NavController, private router: Router) {}
   ngOnInit() {
 
     this.backend.initializeResults(
@@ -37,6 +38,7 @@ constructor(public modalController: ModalController, private backend: BackendSer
       this.topics,
       )
       this.results$ = this.backend.rhymeResult;
+
   }
 
   // async presentModal() {
@@ -65,6 +67,16 @@ constructor(public modalController: ModalController, private backend: BackendSer
   addResult(event, result) {
     console.dir(event);
     this.wordChoices.push(result);
+  }
+
+  sendToRhymeBook(word) {
+    let navigationExtras: NavigationExtras = {
+      queryParams: {
+         word,
+      }
+  };
+  // this.navCtrl.navigateForward(['/rhymeBook'], navigationExtras);
+    this.router.navigate(['tabs/rhymeBook'], navigationExtras);
   }
 
 }
