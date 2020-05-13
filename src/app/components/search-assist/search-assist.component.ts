@@ -30,14 +30,18 @@ export class SearchAssistComponent implements OnInit {
   @Input() syn;
 
 constructor(public modalController: ModalController, private backend: BackendService, public navCtrl: NavController, private router: Router) {}
-  ngOnInit() {
+  
+ngOnInit() {
 
-    this.backend.initializeResults(
-      this.rhyme,
-      this.sl,
-      this.topics,
+      this.results$ = this.backend.initializeResults(
+        this.rhyme,
+        this.sl,
+        this.topics,
       )
-      this.results$ = this.backend.rhymeResult;
+
+
+      
+      
 
   }
 
@@ -56,12 +60,12 @@ constructor(public modalController: ModalController, private backend: BackendSer
 
   
   getResults() {
-    this.backend.wordSearch(
+    this.results$ = this.backend.wordSearch(
       this.rhyme,
       this.sl,
       this.topics,
       )
-      this.results$ = this.backend.rhymeResult;
+     
   }
 
   addResult(event, result) {

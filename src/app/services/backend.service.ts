@@ -25,8 +25,8 @@ export class BackendService {
 
   public readonly rhymeBookContent: Observable<string> = this._rhymeBookContent.asObservable();
   
-  private baseURL = "http://localhost:3000/api/";
-  // private baseURL = "https://real-write-rap.ue.r.appspot.com/api/";
+  // private baseURL = "http://localhost:3000/api/";
+  private baseURL = "https://real-write-rap.ue.r.appspot.com/api/";
 
 
   rhymeResult = null;
@@ -57,14 +57,14 @@ export class BackendService {
 
 
   ///////////////////////////Rhyme Services /////////////////////////////////
-  wordSearch(rhyme,sl,topics) {
-    this.rhymeResult = this.http.get<any[]>(`${this.baseURL}wordSearch/${rhyme}/${topics}`);
+  wordSearch(rhyme,sl,topics): Observable<any> {
+    return this.http.get<any[]>(`${this.baseURL}wordSearch/${rhyme}/${topics}`);
 
   }
 
-  initializeResults(rhyme,sl,topics) { 
+  initializeResults(rhyme,sl,topics): Observable<any> { 
 
-    this.rhymeResult = this.http.get<any[]>(`${this.baseURL}wordSearch/${rhyme}/${topics}`);
+    return this.http.get<any[]>(`${this.baseURL}wordSearch/${rhyme}/${topics}`);
     // this.currentEnc = new BehaviorSubject<any>(this.encResults);
          
   }
